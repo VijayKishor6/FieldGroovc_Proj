@@ -1,0 +1,654 @@
+﻿
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fieldGroove</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<style>
+    .vr{
+        background-color:white !important;
+        opacity:.75;
+    }
+    .nav-bg-color{
+        background-color: #4a86ff;
+    }
+
+    .custom-text {
+        font-weight: bold;
+        color: white;
+        font-size:14px;
+        letter-spacing:1px;
+    }
+
+    .transparent-text {
+        color: rgba(255, 255, 255, 0.5); 
+        font-size: 14px;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+
+    .search-bar{
+        width:200px !important;
+        height:30px !important;
+        border-radius:120px;
+    }
+    .side-bar-font{
+        font-size:12px;
+    }
+
+    .bg-light-sidebar{
+        background-color: rgb(232, 232, 232)
+    }
+
+    .card-empty{
+        width:230px !important;
+    }
+    .bg-color{
+        background-color:#eeeeee;
+    }
+    .badge{
+        background-color:#dddddd;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Style for the popup box */
+    .popup {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Style for the close button */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    .font-size-span {
+        font-size: 12px;
+    }
+</style>
+
+
+</style>
+<body>
+    <div class="container-fluid p-0 m-0 overflow-hidden">
+        <div class="row px-2">
+        <header class="p-0">
+                <nav class="navbar navbar-expand-lg nav-bg-color bg-gradient py-0">
+                    <div class="container-fluid ">
+                       @*  <a class="navbar-brand navbar-brand-text text-white" href="#">FIELD<span>GROOVE</span></a> *@
+                       <div class="px-2">
+                            <span class= "custom-text">FIELD</span><span class="transparent-text">GROOVE</span>
+                       </div>
+
+                        <span class="vr ms-1"></span>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse navbar-collapse-width" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item px-2">
+                                    <a class="nav-link active text-white" aria-current="page" href="#">Leads</a>
+                                </li>
+                                <span class="vr "></span>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-white" href="#">Opportunities</a>
+                                </li>
+                                <span class="vr "></span>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-white" href="#">Jobs</a>
+                                </li>
+                                <span class="vr "></span>
+                                <li class="nav-item dropdown px-2">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Accounting
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <span class="vr "></span>
+                                <li class="nav-item dropdown px-2">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Customers
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <span class="vr "></span>
+                                <li class="nav-item dropdown px-2">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Inventory
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <span class="vr "></span>
+                                <li class="nav-item dropdown px-2">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dispatcher
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <span class="vr "></span>
+                            </ul>
+                        <ul class="navbar-nav mb-2 mb-lg-0 f-flex flex-row justify-content-end">
+                            <li class="nav-item dropdown px-2">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    ABINGTON
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                                
+                            </li>
+                            <li class="d-flex flex-row align-items-center mx-2">
+                                <input class="form-control search-bar me-2 " type="search" placeholder="Search anything" aria-label="Search">
+                            </li>
+                            <li class="d-flex flex-row align-items-center mx-2">
+                                <iconify-icon icon="mdi-light:bell" style="color: white;" width="25" height="25"></iconify-icon>
+                            </li>
+                            <li class="d-flex flex-row align-items-center mx-2">
+                                <iconify-icon icon="codicon:account" style="color: gray;" width="30" height="30"></iconify-icon>
+                            </li>
+                            <li class="d-flex flex-row align-items-center mx-2">
+                                <span class="text-white mx-2 ">Depigaa SV</span>
+                            </li>
+                            </ul>
+                       
+                           
+                        </div>
+                    </div>
+                </nav>
+         </header>
+
+         <div class="p-0">
+             <div class="container-fluid">
+                 <div class="row p-0">
+                     <div class="col-lg-1 bg-light-sidebar py-3 ">
+
+                            <ul style="list-style: none;" class="p-0 m-0">
+                             <li >
+                                    <div class="d-flex flex-row justify-content-center align-items-center m-3 my-4 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <iconify-icon icon="pajamas:task-done" style="color: gray;" width="40" height="40"></iconify-icon>
+                                            <span class="side-bar-font my-1">Tasks</span>
+                                        </div>
+                                    </div>
+                             </li>
+                                <li class="my-4">
+                                    <div class="d-flex flex-row justify-content-center align-items-center m-3 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <iconify-icon icon="uil:calender" style="color: gray;" width="40" height="40"></iconify-icon>
+                                            <span class="side-bar-font my-1">Calender</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="my-4">
+                                    <div class="d-flex flex-row justify-content-center align-items-center m-3 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <iconify-icon icon="mdi:chart-bar" style="color: gray;" width="40" height="40"></iconify-icon>
+                                            <span class="side-bar-font my-1">Reports</span>
+                                        </div>
+                                    </div>
+                             </li>
+                                <li class="my-4">
+                                    <div class="d-flex flex-row justify-content-center align-items-center m-3 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <iconify-icon icon="fa-solid:users" style="color: gray;" width="40" height="40"></iconify-icon>
+                                            <span class="side-bar-font my-1">Users</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="my-4">
+                                    <div class="d-flex flex-row justify-content-center align-items-center m-3 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <iconify-icon icon="lets-icons:setting-fill" style="color: gray;" width="40" height="40"></iconify-icon>
+                                            <span class="side-bar-font my-1">Settings</span>
+                                        </div>
+                                    </div>
+                             </li>
+                                <li class="my-4">
+                                    <div class="d-flex flex-row justify-content-center align-items-center m-3 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <iconify-icon icon="ph:question-fill" style="color: gray;" width="40" height="40"></iconify-icon>
+                                            <span class="side-bar-font my-1">Supports</span>
+                                        </div>
+                                    </div>
+                             </li>
+                                <li class="my-4">
+                                    <div class="d-flex flex-row justify-content-center align-items-center m-3 ">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <iconify-icon icon="bi:speedometer2" style="color: gray;" width="40" height="40"></iconify-icon>
+                                            <span class="side-bar-font my-1">Super Admin</span>
+                                        </div>
+                                    </div>
+                             </li>
+
+                         </ul>
+                     </div>
+                   <div class="col-lg-8">
+                       <div class="row bg-light py-3">
+                          <div class="d-flex flex-row justify-content-between">
+                              <div>
+                                   <h2 class="text-dark">Leads</h2>
+                              </div>
+                              
+                                  <div class="d-flex flex-row align-items-center">
+                                      <button type="button" class="btn btn-warning mx-2">View Converted</button>
+                                      <button type="button" class="btn btn-warning mx-2">View Archieved</button>
+                                        <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Lead</button>
+                                  </div>
+                              
+
+                          </div>
+                       </div>
+                       <div class="row p-2 px-3 justify-content-around">
+                           <div class="col-lg-3 card card-empty bg-light pb-5 ">
+                              <div class="input-group my-3 border-0">
+                                 <input type="text" class="form-control bg-light" placeholder="Search Leads..." aria-label="Recipient's username" aria-describedby="button-addon2"> 
+                               </div>
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected>Select an action</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected>select a Type</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected>select a Status </option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected>Select a sales Person</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label text-primary" for="flexCheckDefault">
+                                            Expired
+                                        </label>
+                                    </div>
+                                    <div class="d-flex flex-row my-2">
+                                        <div class="d-flex flex-row  bg-light-sidebar align-items-center ">
+                                            <iconify-icon class="ps-2" icon="bx:download" style="color: gray;" width="15" height="15"></iconify-icon>
+                                            <button type="button" class="btn">Export</button>
+                                        </div>
+                                        <button type="button" class="btn btn-primary mx-2">Primary</button>
+                                    </div>
+
+                           </div>
+
+                           <div class="col-lg-9 card ">
+                                    
+
+                           </div>
+                                <div class="pe-0 mt-3 m-0">
+                                    <div class="d-flex text-center border ps-3 ">
+                                        <div class="col-6  border d-flex align-items-center justify-content-center bg-color p-2">
+                                            <p class="mb-0 text-secondary"><span class="badge text-white">1</span>&nbsp;Consumer</p>
+                                        </div>
+                                        <div class="col-6  border d-flex align-items-center justify-content-center bg-color p-2">
+                                            <p class="mb-0 text-secondary"><span class="badge text-white">11</span>&nbsp;Business</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pe-0 mt-3 m-0">
+                                    <div class="d-flex text-center border ps-3">
+                                        <div class="col-4  border d-flex align-items-center justify-content-center bg-color p-2">
+                                            <p class="mb-0 text-secondary"><span class="badge text-white">1</span>&nbsp;Consumer</p>
+                                        </div>
+                                        <div class="col-4  border d-flex align-items-center justify-content-center bg-color p-2">
+                                            <p class="mb-0 text-secondary"><span class="badge text-white">11</span>&nbsp;Business</p>
+                                        </div>
+                                        <div class="col-4 border d-flex align-items-center justify-content-center bg-color p-2">
+                                            <p class="mb-0 text-secondary"><span class="badge text-white">11</span>&nbsp;Business</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row justify-content-between">
+                                <div class="my-3 d-flex flex-row align-items-center">
+                                    <span><a href="#" style="text-decoration:none;">Show</a></span>
+                                  <div class="" style="width:100px;">
+                                        <select class="form-select mx-2" aria-label="Default select example">
+                                          
+                                            <option selected value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Four</option>
+                                            <option value="5">Five</option>
+
+                                        </select>
+                                  </div>
+                                        <span class="mx-3"><a href="#" style="text-decoration:none;">Entries</a></span>
+                                </div>
+                                <div>
+                                    <form class="d-flex my-3 align-items-center" role="search">
+                                        <label class="mx-3"> <a href="#" style="text-decoration:none;">Search </a></span></label>
+                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                       
+                                    </form>
+                                    </div>
+                                </div>
+                                <div class="card">
+
+                                    <table class="table" id="dataTable">
+                                    <thead >
+                                        <tr >
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Project Name</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Added</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Contact</th>
+                                            <th scope="col">Action</th>
+                                            <th scope="col">Assignee</th>
+                                            <th scope="col">Bid Date</th>
+                                            <th scope="col">operation</th>
+                                        </tr>
+                                    </thead>
+                                        <tbody id="tableBody"></tbody>
+                                </table>
+
+
+                                 @*    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="editForm" asp-action="Index" asp-controller="fieldGroove">
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input type="text" class="form-control" asp-for="Name" id="editName" placeholder="Enter your Name" required />
+                                                            <label for="editName">Enter your Name</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="ProjectName" id="projectName" placeholder="Enter your Projectname" required />
+                                                            <label for="projectName">Enter your Projectname</label>
+                                                        </div>
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="Status" id="status" placeholder="Enter your Status" required />
+                                                            <label for="status">Enter your Status</label>
+                                                        </div>
+
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="Added" id="added" placeholder="Enter Current Date" required />
+                                                            <label for="added">Enter Current Date</label>
+                                                        </div>
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="Type" id="type" placeholder="Enter your type" required />
+                                                            <label for="type">Enter your type</label>
+                                                        </div>
+
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="Contact" id="contact" placeholder="Enter your Contact" required />
+                                                            <label for="contact">Enter your Contact</label>
+                                                        </div>
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="Action" id="action" placeholder="Enter your Action" required />
+                                                            <label for="action">Enter your Action</label>
+                                                        </div>
+
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="Assignee" id="assignee" placeholder="Enter your Assignee" required />
+                                                            <label for="assignee">Enter your Assignee</label>
+                                                        </div>
+
+                                                        <div class="form-floating mb-3" style="width:300px;">
+                                                            <input class="form-control" type="text" asp-for="BidDate" id="bidDate" placeholder="Enter Date" required />
+                                                            <label for="bidDate">Enter Date</label>
+                                                        </div>
+                                                       
+                                                        <div class="d-flex flex-row justify-content-center">
+                                                            <button type="submit" class="btn btn-primary mt-2 "  onclick="saveChanges()">
+                                                                <span id="editButtonLabel">Add Lead</span>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+ *@
+
+                                </div>
+                       </div>
+                   </div>
+                        <div class="col-lg-3 bg-light-sidebar ">
+                            
+                        </div>
+                 </div>
+             </div>
+         </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+<script>
+
+    function saveChanges() {
+      
+        var form = document.getElementById("editForm");
+        form.submit();
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        fetchData();
+    });
+
+  
+
+    async function fetchData() {
+        try {
+            const response = await fetch('https://localhost:44367/api/fieldGrooveAPI');
+            const data = await response.json();
+            console.log(data); // Check the structure in the console
+            populateTable(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+
+    function populateTable(data) {
+        const tableBody = document.getElementById('tableBody');
+
+        data.forEach(row => {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                        <td>${row.registerName}</td>
+                    <td>${row.projectName}</td>
+                    <td>${row.status}</td>
+                    <td>${row.added}</td>
+                    <td>${row.accountType}</td>
+                    <td>${row.contact}</td>
+                    <td>${row.action}</td>
+                    <td>${row.assignedUser}</td>
+                    <td>${row.bidDate}</td>
+                    <td class="d-flex flex-row my-2 mb-0">
+                                    <button class="btn btn-outline-light btn-edit p-1 d-flex align-items-center mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openEditPopup(${row.leadsId})">
+                                    <iconify-icon icon="mingcute:edit-line" style="color:blue;" class="p-0" width="18"></iconify-icon>
+                                </button>
+                                    <button class="btn btn-outline-light p-1 d-flex align-items-center mx-2  mb-3" onclick="deleteRow(${row.leadsId})">
+                                        <iconify-icon icon="ic:twotone-delete-forever" style="color:red;" class="p-0" width="18"></iconify-icon>
+                                </button>
+                    </td>
+                   
+                `;
+            tableBody.appendChild(newRow);
+        });
+    }
+    // put method
+    let currentEditId; 
+
+    function openEditPopup(id) {
+        // Set the currentEditId
+        currentEditId = id;
+        console.log('ID:', id);
+        // Fetch data for the selected ID
+        fetch(`https://localhost:44367/api/fieldGrooveAPI/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                // Populate the form fields with existing values
+                document.getElementById('editName').value = data.registerName;
+                document.getElementById('projectName').value = data.projectName;
+                document.getElementById('status').value = data.status
+                document.getElementById('added').value = data.added
+                document.getElementById('type').value = data.accountType
+                document.getElementById('contact').value = data.contact
+                document.getElementById('action').value = data.action;
+                document.getElementById('assignee').value = data.assignedUser
+                document.getElementById('bidDate').value = data.bidDate
+                // Populate other fields as needed
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+        var editButtonLabel = document.getElementById('editButtonLabel');
+        if (currentEditId > 0) {
+            editButtonLabel.textContent = 'Save changes';
+        } else {
+            editButtonLabel.textContent = 'Add Lead';
+        }
+    }
+
+    function saveChanges() {
+        // Get the edited values from the form
+        const editedName = document.getElementById('editName').value;
+        const editedProjectName = document.getElementById('projectName').value;
+        const editedstatus = document.getElementById('status').value;
+        const editedadded = document.getElementById('added').value;
+        const editedtype = document.getElementById('type').value;
+        const editedcontact = document.getElementById('contact').value;
+        const editedaction = document.getElementById('action').value;
+        const editedassignee = document.getElementById('assignee').value;
+        const editedbidDate = document.getElementById('bidDate').value;
+        // Get other edited values as needed
+
+        // Prepare the updated data
+        const updatedData = {
+            registerName: editedName,
+            projectName: editedProjectName,
+            status : editedstatus,
+            added: editedadded,
+            accountType: editedtype,
+            contact: editedcontact,
+            action: editedaction,
+            assignedUser: editedassignee,
+            bidDate: editedbidDate,
+
+            // Add other properties as needed
+        };
+
+        if (currentEditId > 0) {
+            // Send a PUT request to update the data in the database
+            fetch(`https://localhost:44367/api/fieldGrooveAPI/updateDetails/${currentEditId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedData),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(updatedData => {
+                    console.log('Data updated successfully:', updatedData);
+                    openEditPopup(currentEditId);
+                })
+                .catch(error => console.error('Error updating data:', error));
+        } else {
+            // Send a POST request to add new data to the database
+            fetch('https://localhost:44367/api/fieldGrooveAPI/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedData),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(newData => {
+                    console.log('New data added successfully:', newData);
+                    // Optionally, you might want to update the UI or take other actions
+                })
+                .catch(error => console.error('Error adding new data:', error));
+        }
+    }
+</script>
+</html>

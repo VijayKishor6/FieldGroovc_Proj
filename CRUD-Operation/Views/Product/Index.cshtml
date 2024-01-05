@@ -1,0 +1,67 @@
+﻿@* @model IEnumerable<CRUD.Domain.Models.Product>
+@{
+    ViewData["Title"] = "PRODUCT LIST";
+}
+
+<div class="container">
+<h3 class="text-center my-3">@ViewData["Title"]</h3>
+    <form>
+        <div class="d-flex flex-columnrow justify-content-end">
+            <button asp-action="CreateOrEdit" asp-controller="Product" class="btn btn-primary mb-3 mx-4">Create Product</button>
+            <button asp-action="Login" asp-controller="Register" class="btn btn-primary mb-3">Logout</button>
+        </div>
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr class="table-active">
+                    <th>
+                        @Html.DisplayNameFor(model => model.ID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Qty)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td>@product.ID</td>
+                            <td>@product.ProductName</td>
+                            <td>@product.Price</td>
+                            <td>@product.Qty</td>
+                            <td class="text-center" width="240px">
+                                <div class="btn-group btn-group-sm ">
+                                    <a asp-controller="Product" asp-action="CreateOrEdit" asp-route-id="@product.ID"
+                                       class="btn btn-success mx-3 px-3">Edit</a>
+                                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@product.ID"
+                                       class="btn btn-danger px-3">Delete</a>
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4">
+                            <div>
+                                No Product....
+                            </div>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </form>
+</div> *@
