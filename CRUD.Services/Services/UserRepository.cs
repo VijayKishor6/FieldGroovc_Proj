@@ -41,9 +41,9 @@ namespace CRUD.Services.Services
             await Save();
         }
 
-        public async Task<Users> GetUserByEmail(string email)
+        public Users GetUserByEmail(string email)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            return _context.Users.FirstOrDefault(u => u.Email == email);
         }
 
         public async Task UpdateUser(Users user)

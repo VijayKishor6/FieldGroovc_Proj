@@ -48,7 +48,7 @@ namespace CRUD_Operation.Controllers
         [HttpGet("activate")]
         public async Task<IActionResult> ActivateAccount([FromQuery] string email)
         {
-            var user = await _userRepository.GetUserByEmail(email);
+            var user =  _userRepository.GetUserByEmail(email);
 
             if (user != null)
             {

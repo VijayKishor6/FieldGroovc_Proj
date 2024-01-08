@@ -23,9 +23,11 @@ namespace CRUD.Domain.Models
         public DateTime CreatedDate { get; set; }
         public string UpdatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
-
-
-    public Users()
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string Country { get; set; }
+        public string County { get; set; }
+        public Users()
     {
         // Set default values in the constructor
         CreatedDate = DateTime.UtcNow;

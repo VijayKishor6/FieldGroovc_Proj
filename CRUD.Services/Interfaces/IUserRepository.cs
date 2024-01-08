@@ -10,7 +10,7 @@ namespace CRUD.Services.Interfaces
     public interface IUserRepository
     {
         Task UserAdd(Users model);
-        Task<Users> GetUserByEmail(string email);
+        Users GetUserByEmail(string email);
         Task UpdateUser(Users user);
         Users GetById(int id);
     }
